@@ -8,11 +8,12 @@ namespace SimpleGames.Deck
 {
     public class Card
     {
-        public string Rank { get; set; }
+        public int Rank { get; set; }
 
-        public string Suit { get; set; }
+        public int Suit { get; set; }
 
-        public Card(string rank, string suit)
+        public Card() { }
+        public Card(int suit, int rank)
         {
             Rank = rank;
             Suit = suit;
