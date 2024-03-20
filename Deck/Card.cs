@@ -17,7 +17,7 @@ namespace SimpleGames.Deck
         {
             Rank = rank;
             Suit = suit;
-        }
+        }       
 
         public void FaceUp()
         {

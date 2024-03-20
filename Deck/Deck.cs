@@ -9,14 +9,17 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace SimpleGames.Deck
 {
     public class Deck
-    {              
-        
+    {           
+        public Deck() 
+        {
+            NewDeck();
+        }
         public static void Reset()
         {
             Console.WriteLine("Card(chooseSuit.Next(1,4)); chooseRank.Next(2,15)");
         }
-        // Implementation with a List.
-        public List<Card> NewDeck()
+        // Implementation with a List and HashSet.
+        public static List<Card> NewDeck()
         {
             List<Card> cards = new List<Card>(52);
 
@@ -75,25 +78,60 @@ namespace SimpleGames.Deck
             cards.Add(new Card(4, 13));
             cards.Add(new Card(4, 14));
             #endregion
-            // Adding each card with a loop.
 
+            // Adding each card with a loop.
+            //for (int i = 1; i < 5; i++)
+            //{
+            //    for (int j = 2; j < 15; j++)
+            //    {
+            //        cards.Add(new Card(i, j));
+            //    }
+            //}
 
             return cards;
         }
-        // Implementation with a Dictionary
 
-        public HashSet<int> Shuffle()
+        public static HashSet<int> Shuffle()
         {
             HashSet<int> shuffledNumbers = new HashSet<int>(52);
 
             while (shuffledNumbers.Count < 52)
             {
-                Random random = new Random();                
+                Random random = new Random();
                 int number = random.Next(0, 52);
-                shuffledNumbers.Add(number);                
+                shuffledNumbers.Add(number);
             }
             return shuffledNumbers;
         }
+
+        #region Implementation with Dictionary and int Array
+        //public Dictionary<int, Card> NewDeck()
+        //{
+        //    Dictionary<int, Card> deck = new Dictionary<int, Card>();
+        //    int cardNumber = 0;
+        //    for (int i = 1; i < 5; i++)
+        //    {
+        //        for (int j = 2; j < 15; j++)
+        //        {
+        //            deck.Add(cardNumber++, new Card(i, j));
+        //        }
+        //    }
+        //    return deck;
+        //}
+
+        //public int[] Shuffle()
+        //{
+        //    HashSet<int> shuffledNumbers = new HashSet<int>(52);
+
+        //    while (shuffledNumbers.Count < 52)
+        //    {
+        //        Random random = new Random();
+        //        int number = random.Next(0, 52);
+        //        shuffledNumbers.Add(number);
+        //    }
+        //    return shuffledNumbers.ToArray();
+        //}
+        #endregion
 
     }
 }

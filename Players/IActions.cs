@@ -8,8 +8,9 @@ namespace SimpleGames.Players
 {
     public interface IActions
     {
-        void Call(); // Also known as Stay in some games.
-        void Fold();
-        void Bet(); // Also known as Hit in some games.
+        bool Call(); // Also known as Stay in some games.
+        bool Fold();
+        bool Bet(); 
+        void Hit(HashSet<int> shuffledDeck, Player player);
     }
 }
