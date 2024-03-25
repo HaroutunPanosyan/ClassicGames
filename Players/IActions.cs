@@ -11,6 +11,6 @@ namespace SimpleGames.Players
         bool Call(); // Also known as Stay in some games.
         bool Fold();
         bool Bet(); 
-        void Hit(HashSet<int> shuffledDeck, Player player);
+        Player Hit(HashSet<int> shuffledDeck, List<int> hands);
     }
 }
